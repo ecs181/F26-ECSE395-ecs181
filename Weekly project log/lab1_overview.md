@@ -17,6 +17,7 @@
    * *Is Rickrolling still a thing?*
 5. Sat around for a bit thinking about what more I can add. I think I'm done `¯\_(ツ)_/¯`
 <br />
+
 ## Post-Lab Assessment
 
 - This lab took me around and hour and a half to complete
