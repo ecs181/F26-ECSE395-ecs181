@@ -11,26 +11,26 @@ void setup() {
 }
 
 void loop() {
-  // Making my ESP32 do an SoS Signal, so that will be the message
-  Serial.println("SoS"); // Print the words to the Serial Monitor.
+  // Making my ESP32 do an SoS Signal, so that will be the message (ecs181)
+  Serial.println("SoS"); // Print the words to the Serial Monitor. (ecs181)
   
   // SOS Signal
   //First S (Three long)
-  for(int i = 0; i<3; i++){
+  for(int i = 0; i<3; i++){ //ecs181
     digitalWrite(LED_PIN, HIGH); // LED On
     delay(1000); // Speed in milliseconds
     digitalWrite(LED_PIN, LOW); // LED Off
     delay(200); // Speed in milliseconds
   }
   // O (Three short)
-  for(int j = 0; j<3; j++){
+  for(int j = 0; j<3; j++){ //ecs181
     digitalWrite(LED_PIN, HIGH); // LED On
     delay(500); // Speed in milliseconds
     digitalWrite(LED_PIN, LOW); // LED Off
     delay(200); // Speed in milliseconds
   }
   // Second S (Three Long)
-  for(int k = 0; k<3; k++){
+  for(int k = 0; k<3; k++){ //ecs181
     digitalWrite(LED_PIN, HIGH); // LED On
     delay(1000); // Speed in milliseconds
     digitalWrite(LED_PIN, LOW); // LED Off
