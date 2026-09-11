@@ -1,3 +1,4 @@
+/*
 #include <Arduino.h>
 
 // put function declarations here:
@@ -16,3 +17,4 @@ void loop() {
 int myFunction(int x, int y) {
   return x + y;
 }
+*/
