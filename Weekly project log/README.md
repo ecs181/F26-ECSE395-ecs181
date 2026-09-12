@@ -5,3 +5,4 @@ This repository is Ethan Sloat's (Group 7) weekly project log for ECSE 395 and t
 | Weeks   | Lab Contents                                                                            |
 | ------- | --------------------------------------------------------------------------------------- |
 | Week 1  | Figuring out Github and Markdown                                                        |
+| Week 3  | Stakeholder meeting review and affinity clustering                                      |
