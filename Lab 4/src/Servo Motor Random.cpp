@@ -5,7 +5,7 @@
 
 // Define the servo and the pin it is connected to, what is your servo pin?
 Servo myServo;
-const int servoPin = 0;
+const int servoPin = A0;
 
 // variable for random angle
 int randomAngle;
@@ -18,6 +18,7 @@ const int minPulseWidth = 500; // 0.5 ms
 const int maxPulseWidth = 2500; // 2.5 ms
 
 void setup() {
+  Serial.begin(115200);
   // Attach the servo to the specified pin and set its pulse width range
   myServo.attach(servoPin, minPulseWidth, maxPulseWidth);
 
@@ -27,10 +28,11 @@ void setup() {
 
 void loop() {
     //  --- SECTION 1: Make a Random Angle Between 0 to 180 ---
-    // randomAngle = ?; // random(A,B); returns a random value between A and B
-
+    randomAngle = random(0,180); // random(A,B); returns a random value between A and B
+    Serial.print(randomAngle);
+    Serial.println("degrees");
     // ---SECTION 2: Map Pulse Width with Angle
-    // pulseWidth = map(?, ?, ?, ?, ?, ?) // from Servo Motor.cpp, what did you learn from using map function?
+    pulseWidth = map(randomAngle, 0, 180, minPulseWidth, maxPulseWidth); // from Servo Motor.cpp, what did you learn from using map function?
     myServo.writeMicroseconds(pulseWidth); // writing pulse width to servo
 
     delay(1000); // change delay to your own preference
