@@ -25,8 +25,8 @@ My tasks are as follows (loose functional specs):
   - Green light when within safe/good limit
   - Red light when in dangerous zone and heart rate is constant/increasing
   - Yellow zone when in dangerous zone and heart rate is actively decreasing
-**Circuit diagram below:**
-![Circuit Diagram](./videos/Lab5CircuitDiagram.pdf)
+  - **Circuit diagram below:**
+    - ![Circuit Diagram](./videos/Lab5CircuitDiagram.pdf)
 ## Application Difficulties
 | Problem | Solution |
 | ------- | -------- |
