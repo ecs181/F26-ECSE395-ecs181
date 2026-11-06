@@ -1,0 +1,5 @@
+- Meeting on Friday 10/2 with George
+    -  Spoke about plan of attack
+    - Broke system down into modular components
+    - Bahavioral architecture
+    - Talked about implementation of lid location detection and lid pushing

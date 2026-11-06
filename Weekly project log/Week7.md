@@ -1,0 +1,2 @@
+- **10/5**: Worked on Prototype Plan
+- **10/7**: Developed code for potentiometer angle sensing and attempted to access hinge of toilet
