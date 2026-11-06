@@ -1,0 +1,11 @@
+- **11/6** Begin implementation of gyro module
+
+    - Import libraries to handle gyro data [(guide from here)](https://learn.adafruit.com/mpu6050-6-dof-accelerometer-and-gyro/arduino)
+        - *Adafruit MPU6050*
+        - *Adafruit BusIO*
+        - *Adafruit Unified Sensor*
+    - **Based on initial testing, HW-123 gyroscopic module will not be accurate enough with slow movements to work with our application**
+        - Will attempt to refine, and also begin considering implementing time-of-flight sensor
+        - Watched [this video on accelerometers and gyroscopes](https://www.youtube.com/watch?v=C7JQ7Rpwn2k&t=996s)
+- **11/6** Coordinate weekend meeting time over text
+    - Plan to work long session Saturday 
