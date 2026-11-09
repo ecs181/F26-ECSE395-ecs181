@@ -1,18 +1,3 @@
-/*
-The contents of this code and instructions are the intellectual property of Carbon Aeronautics. 
-The text and figures in this code and instructions are licensed under a Creative Commons Attribution - Noncommercial - ShareAlike 4.0 International Public Licence. 
-This license lets you remix, adapt, and build upon your work non-commercially, as long as you credit Carbon Aeronautics 
-(but not in any way that suggests that we endorse you or your use of the work) and license your new creations under the identical terms.
-This code and instruction is provided "As Is” without any further warranty. Neither Carbon Aeronautics or the author has any liability to any person or entity 
-with respect to any loss or damage caused or declared to be caused directly or indirectly by the instructions contained in this code or by 
-the software and hardware described in it. As Carbon Aeronautics has no control over the use, setup, assembly, modification or misuse of the hardware, 
-software and information described in this manual, no liability shall be assumed nor accepted for any resulting damage or injury. 
-By the act of copying, use, setup or assembly, the user accepts all resulting liability.
-
-1.0  29 December 2022 -  initial release
-1.1  Adapted from Teensy 4.0 to ESP32 (modified from the original Carbon Aeronautics code)
-1.2  Added I2C error checking, repeated-start reads, WHO_AM_I check and bus recovery
-*/
 
 #include <Arduino.h>
 #include <Wire.h>
@@ -20,11 +5,10 @@ By the act of copying, use, setup or assembly, the user accepts all resulting li
 // ---- ESP32 board settings (classic ESP32 DevKit defaults) ----
 #define SDA_PIN 21
 #define SCL_PIN 22
-#define LED_PIN 2
 #define MPU_ADDR 0x68
 #define USE_DEFAULT_PINS 1 // 1 = use the board's default I2C pins (Wire.begin()), 0 = use SDA_PIN/SCL_PIN above
 #define I2C_CLOCK 400000   // try 100000 if you still see errors
-#define PRINT_EVERY 10     // print every 10th loop (25 Hz)
+#define PRINT_EVERY 1000     // print every 10th loop (25 Hz)
 
 float RateRoll, RatePitch, RateYaw;
 float RateCalibrationRoll, RateCalibrationPitch, RateCalibrationYaw;
@@ -129,17 +113,16 @@ bool gyro_signals(void) {
 }
 
 void setup() {
-  Serial.begin(115200);
-  pinMode(LED_PIN, OUTPUT);
-  digitalWrite(LED_PIN, HIGH);
+Serial.begin(115200);
+//SETUP FOR ANGLE MEASUREMENT
   delay(3000);   // gives you time to open the serial monitor and see the startup messages
   i2c_start();
-#if USE_DEFAULT_PINS
-  Serial.printf("I2C using board default pins: SDA=%d SCL=%d\n", (int)SDA, (int)SCL);
-#else
-  Serial.printf("I2C using pins: SDA=%d SCL=%d\n", SDA_PIN, SCL_PIN);
-#endif
-  delay(250);
+  #if USE_DEFAULT_PINS
+    Serial.printf("I2C using board default pins: SDA=%d SCL=%d\n", (int)SDA, (int)SCL);
+  #else
+    Serial.printf("I2C using pins: SDA=%d SCL=%d\n", SDA_PIN, SCL_PIN);
+  #endif
+    delay(250);
 
   // Diagnostic: is the sensor answering, and what is it?
   uint8_t who = 0;
@@ -201,6 +184,7 @@ void loop() {
   while (micros() - LoopTimer < 4000);
   LoopTimer=micros();
 }
+
 /*
 #include <Wire.h>
 #include "I2Cdev.h"
