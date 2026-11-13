@@ -1,4 +1,4 @@
-
+/*
 #include <Arduino.h>
 #include <Wire.h>
 
@@ -184,7 +184,7 @@ void loop() {
   while (micros() - LoopTimer < 4000);
   LoopTimer=micros();
 }
-
+*/
 /*
 #include <Wire.h>
 #include "I2Cdev.h"
@@ -261,7 +261,7 @@ void loop() {
   }
 }
 */
-/*
+
 #include <Wire.h>
 #include <MPU6050_6Axis_MotionApps20.h>
 #include <MPU6050.h>
@@ -269,7 +269,7 @@ void loop() {
 MPU6050 mpu(0x68);
 
 void setup(void) {
-  Wire.begin(21, 22);
+  Wire.begin(22, 20);
   Wire.setClock(400000);
   Serial.begin(115200);
 
@@ -318,4 +318,4 @@ void loop() {
       Serial.println(ypr[2] * 180/M_PI);
   }
 }
-*/
+
